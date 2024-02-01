@@ -29,4 +29,8 @@ npm install
 
 node transfer_funds.js
 
+*use at your own risk - double check all fields point to YOUR addresses that you CONTROL*
+
 END.
+
+
