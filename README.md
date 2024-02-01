@@ -23,7 +23,11 @@ Destination: 'rYourWalletYouControl';
 
 DestinationTag: 123456,
 
-install & run
+**install & run**
+
+git clone https://github.com/jellicoe/EVERNODE_WITHDRAW/
+
+cd EVERNODE_WITHDRAW
 
 npm install
 
