@@ -1,0 +1,6 @@
+{
+    "dependencies": {
+      "xrpl-accountlib": "^3.2.9",
+      "xrpl-client": "^2.3.1"
+    }
+  }
