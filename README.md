@@ -26,6 +26,7 @@ DestinationTag: 123456,
 install & run
 
 npm install
+
 node transfer_funds.js
 
 END.
