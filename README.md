@@ -7,3 +7,9 @@ Script to withdraw EVR rewards from one or more nodes.
 // have set their Regular Key to the signing address.
 // To set the Regular Key for a node..on each node issue the command from the terminal
 // $ evernode regkey set rWalletAddressThatYouOwnThatCanSignTransactions
+
+Fields to SET 
+secret = 'ssWalletSecretThatCanSIGN';
+Destination: 'rYourWalletYouControl';
+DestinationTag: 123456,
+
