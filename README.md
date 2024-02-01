@@ -1,5 +1,5 @@
 # EVERNODE_WITHDRAW
-Script to withdraw EVR rewards from one or more nodes.
+Script to withdraw EVR rewards from one or more Evernode nodes.
 
 This Script will cycle through an array of addresses, get their EVR balance then send all of the EVR balance to a single receiving address with TAG. This script is designed to use a single signing address where all nodes have set their Regular Key to the signing address of an active account in Xaman or other wallet that you control.
 
