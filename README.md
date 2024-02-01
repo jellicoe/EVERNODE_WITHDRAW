@@ -18,7 +18,9 @@ const accounts = [
 ];
 
 secret = 'ssWalletSecretThatCanSIGN';
+
 Destination: 'rYourWalletYouControl';
+
 DestinationTag: 123456,
 
 install & run
