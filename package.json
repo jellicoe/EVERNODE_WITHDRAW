@@ -1,6 +1,7 @@
 {
     "dependencies": {
       "xrpl-accountlib": "^3.2.9",
-      "xrpl-client": "^2.3.1"
+      "xrpl-client": "^2.3.1",
+      "dotenv": "^16.4.1"
     }
   }

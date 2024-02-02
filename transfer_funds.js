@@ -1,4 +1,4 @@
-//MAIN file to send EVR to XAHAU Wallet
+// MAIN file to send EVR to XAHAU Wallet
 
 // This Script will cycle through an array of addresses, get their EVR balance
 // then send all of the EVR balance to a single receiving address with TAG.
@@ -13,16 +13,16 @@ const { XrplClient } = require('xrpl-client')
 const lib = require('xrpl-accountlib');
 const { exit } = require('process');
 
-//Node Wallets r Addresses 
-//replace with one or more of your rAddresses for each node
-const accounts = [
-'rAddressNode01',
-'rAddressNode02',
-'rAddressNode03'
-];
+//get variables from .env files
+const env = require("dotenv").config({path:".env"});
+
+//accounts = your Node Wallets r Addresses 
+//replace with one or more of your rAddresses for each node in .env file
+const accounts = process.env.accounts.split('\n');
 
 //Signing Wallet which is set as Regular Key for all Nodes
-const secret = 'ssWalletSecretThatCanSIGN'; //secret - set as secret from regular key set for nodes
+//set secret in .env file from regular key set for nodes
+const secret = process.env.secret;
 const keypair = lib.derive.familySeed(secret)
 
 //connect to xahau blockchain RPC server
@@ -68,6 +68,10 @@ const main = async () => {
         exit();
       }
     
+    //Destination Adress and TAG set in.env file
+    const destination = process.env.destination;
+    const tag = process.env.tag;
+
     //send all funds to your chosen Exchange, Xaman or other Xahau account 
     const tx = {
       TransactionType: 'Payment',
@@ -78,8 +82,8 @@ const main = async () => {
           "issuer": "rEvernodee8dJLaFsujS6q1EiXvZYmHXr8" //DO NOT CHANGE - this is the EVR Trustline Issuer address
       },
       //Destination: 'rYourWalletYouControl'
-      Destination: 'rYourWalletYouControl', //your exchnage or xaman wallet address
-      DestinationTag: 123456, //*** set to YOUR exchange wallet TAG Note: no quotes << do not forget to set TAG
+      Destination: destination, //your exchnage or xaman wallet address
+      DestinationTag: tag, //*** set to YOUR exchange wallet TAG Note: no quotes << do not forget to set TAG
       Fee: '12', //12 drops aka 0.000012 XAH, Note: Fee is XAH NOT EVR
       NetworkID: '21337', //XAHAU Production ID
       Sequence: account_data.Sequence
