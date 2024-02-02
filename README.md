@@ -28,7 +28,8 @@ rAddressNode03"
 secret="ssWalletSecretThatCanSIGN"
 
 destination="rYourWalletYouControl"
-tag="1234567",
+
+tag="1234567"
 
 npm install
 
