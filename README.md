@@ -9,25 +9,24 @@ $ evernode regkey set rWalletAddressThatYouOwnThatCanSignTransactions
 
 and in Xaman (or other wallet app) import the rAddressNode01 to 03 as a ReadOnly existing account. This will let your Xaman account sign all node transactions.
 
-Fields to SET in script:
-
-const accounts = [
-'rAddressNode01',
-'rAddressNode02',
-'rAddressNode03'
-];
-
-secret = 'ssWalletSecretThatCanSIGN';
-
-Destination: 'rYourWalletYouControl';
-
-DestinationTag: 123456,
 
 **install & run**
 
 git clone https://github.com/jellicoe/EVERNODE_WITHDRAW/
 
 cd EVERNODE_WITHDRAW
+
+Copy .env.sample to .env
+Fields to SET in .env file script:
+
+accounts="rAddressNode01
+rAddressNode02
+rAddressNode03"
+
+secret="ssWalletSecretThatCanSIGN"
+
+destination="rYourWalletYouControl"
+tag="1234567",
 
 npm install
 
