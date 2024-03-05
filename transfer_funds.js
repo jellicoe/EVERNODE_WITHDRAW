@@ -67,6 +67,13 @@ const main = async () => {
         console.log('# TOO MANY Trust Lines:', l.length, '\n\n')
         exit();
       }
+
+       //check just the EVRs balance is > 0 if not go to start of for loop with continue
+       if (balance <= 0) {
+        console.log('# Evr Balance TOO LOW:', balance, '\n\n')
+        continue;
+      }
+
     
     //Destination Adress and TAG set in.env file
     const destination = process.env.destination;
