@@ -37,6 +37,10 @@ node transfer_funds.js
 
 *use at your own risk - double check all fields point to YOUR addresses that you CONTROL*
 
+$crontab - e
+
+* */4 * * * /usr/bin/node /root/EVERNODE_WITHDRAW/transfer_funds.js >> /root/EVERNODE_WITHDRAW/log.log 2>&1
+
 END.
 
 
