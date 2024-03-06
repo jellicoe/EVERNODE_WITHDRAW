@@ -25,19 +25,22 @@ const accounts = process.env.accounts.split('\n');
 const secret = process.env.secret;
 const keypair = lib.derive.familySeed(secret)
 
-//connect to xahau blockchain RPC server
-const client = new XrplClient('wss://xahau.network');
+//connect to xahau blockchain WSS server
+const xahaud = process.env.xahaud;
+const client = new XrplClient(xahaud);
+
 const wallets = []
 
+console.log('Printing Account INFO...');
 const main = async () => {
     for(const account of accounts) {
-      console.log('\n\nGetting ready...'); 
+      //console.log('\nGetting ready...'); 
    
         const { account_data } = await client.send({ command:"account_info", account })
-        console.log('Printing Account INFO...');
+        //console.log('Printing Account INFO...');
 
-        console.log(account);
-        console.log(account_data);
+        //console.log(account); //print address
+        //console.log(account_data); // FULL Output
 
     ////GET Trustline Details - Get EVR Balance
     // Ensure only ONE Trustline per node wallet which is set to EVERNODE
@@ -49,7 +52,7 @@ const main = async () => {
       while (typeof marker === 'string') {
         const lines = await client.send({ command: 'account_lines', account, marker: marker === '' ? undefined : marker })
         marker = lines?.marker === marker ? null : lines?.marker
-        console.log(`Got ${lines.lines.length} results`)
+        //console.log(`Got ${lines.lines.length} results`)
         lines.lines.forEach(t => {
 
             //t is the details for the EVR trustline to evernode and the balance
@@ -69,8 +72,8 @@ const main = async () => {
       }
 
        //check just the EVRs balance is > 0 if not go to start of for loop with continue
-       if (balance <= 0) {
-        console.log('# Evr Balance TOO LOW:', balance, '\n\n')
+      if (balance <= 0) {
+        console.log('# Evr Balance TOO LOW:', balance)
         continue;
       }
 
