@@ -12,9 +12,13 @@
 const { XrplClient } = require('xrpl-client')
 const lib = require('xrpl-accountlib');
 const { exit } = require('process');
+//const path = require('path')
 
 //get variables from .env files
-const env = require("dotenv").config({path:".env"});
+//const env = require("dotenv").config({path:".env"});
+//const env = require("dotenv").config({path: __dirname + '.env'})
+const path = require('path')
+require('dotenv').config({ path: path.resolve(__dirname, '.env') })
 
 //accounts = your Node Wallets r Addresses 
 //replace with one or more of your rAddresses for each node in .env file
