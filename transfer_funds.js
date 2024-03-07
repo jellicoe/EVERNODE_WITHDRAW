@@ -35,7 +35,7 @@ const client = new XrplClient(xahaud);
 
 const wallets = []
 
-console.log('Printing Account INFO...');
+console.log('Printing Account INFO...', + Date.now());
 const main = async () => {
     for(const account of accounts) {
       //console.log('\nGetting ready...'); 
