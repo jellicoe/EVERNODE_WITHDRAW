@@ -36,9 +36,11 @@ node transfer_funds.js
 
 *use at your own risk - double check all fields point to YOUR addresses that you CONTROL*
 
-$crontab - e
+To set a scheduled task to do this use cron, the example below runs the transfer script every 4 hours and logs the results to a file called log.log
 
-* */4 * * * /usr/bin/node /root/EVERNODE_WITHDRAW/transfer_funds.js >> /root/EVERNODE_WITHDRAW/log.log 2>&1
+$crontab -e
+
+"* */4 * * * /usr/bin/node /root/EVERNODE_WITHDRAW/transfer_funds.js >> /root/EVERNODE_WITHDRAW/log.log 2>&1"
 
 END.
 
