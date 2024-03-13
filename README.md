@@ -7,8 +7,7 @@ To set the Regular Key for a node...on each node issue the command from the term
 
 $ evernode regkey set rWalletAddressThatYouOwnThatCanSignTransactions
 
-and in Xaman (or other wallet app) import the rAddressNode01 to 03 as a ReadOnly existing account. This will let your Xaman account sign all node transactions.
-
+Optionally: in Xaman (or other wallet app) import the nodes rAddressNode01 to 03 as a ReadOnly existing account for easy visability.
 
 **install & run**
 
