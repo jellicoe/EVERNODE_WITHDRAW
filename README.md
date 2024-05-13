@@ -42,6 +42,14 @@ $crontab -e
 
 "* */4 * * * /usr/bin/node /root/EVERNODE_WITHDRAW/transfer_funds.js >> /root/EVERNODE_WITHDRAW/log.log 2>&1"
 
+Node Updates: 
+
+install npm-check 
+npm i npm-check@latest -g
+
+update node_modules
+npm-check -u
+
 END.
 
 
