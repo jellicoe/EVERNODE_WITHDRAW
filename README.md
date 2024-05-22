@@ -41,6 +41,8 @@ To set a scheduled task to do this use cron, the example below runs the transfer
 $crontab -e
 
 "* */4 * * * /usr/bin/node /root/EVERNODE_WITHDRAW/transfer_funds.js >> /root/EVERNODE_WITHDRAW/log.log 2>&1"
+# Delete xahaud log every sunday at 00:15
+"15 0 * * 0 /root/EVERNODE_WITHDRAW/clean_log.sh >> /root/EVERNODE_WITHDRAW/clean.log 2>&1"
 
 Node Updates: 
 
