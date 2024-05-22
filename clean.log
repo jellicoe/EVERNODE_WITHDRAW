@@ -80,3 +80,31 @@ Pubkey:
 n9KMevDiuTW3pJAWHhB3G8u71ufpxMRT7F6ftS6m5JziieMLLft3
 
 Mon May 13 01:25:05 AM UTC 2024
+rm: cannot remove '/root/mainnet-docker/store/db/nudb/nudb.dat': No such file or directory
+
+                   $$\                                 $$\ 
+                   $$ |                                $$ |
+$$\   $$\ $$$$$$\  $$$$$$$\   $$$$$$\  $$\   $$\  $$$$$$$ |
+\$$\ $$  |\____$$\ $$  __$$\  \____$$\ $$ |  $$ |$$  __$$ |
+ \$$$$  / $$$$$$$ |$$ |  $$ | $$$$$$$ |$$ |  $$ |$$ /  $$ |
+ $$  $$< $$  __$$ |$$ |  $$ |$$  __$$ |$$ |  $$ |$$ |  $$ |
+$$  /\$$\\$$$$$$$ |$$ |  $$ |\$$$$$$$ |\$$$$$$  |\$$$$$$$ |
+\__/  \__|\_______|\__|  \__| \_______| \______/  \_______|
+
+>>> MAINNET EDITION
+
+>>> NETWORK ID: [ 21337 ]
+
+xahaud-mainnet
+WARNING: Published ports are discarded when using host network mode
+315bdd8c776ef32c2658a538e5575a6be5d225e312c55eb3a085dfbbb26a76da
+
+Xahaud running binary version:
+232cf9a774371b38ff9a33d8834ffd6c
+Xahaud running version string (build_version):
+2024.4.21-release+858
+
+Pubkey:
+n9KMevDiuTW3pJAWHhB3G8u71ufpxMRT7F6ftS6m5JziieMLLft3
+
+Sun May 19 12:15:05 AM UTC 2024
