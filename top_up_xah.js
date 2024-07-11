@@ -66,7 +66,7 @@ const main = async () => {
       //send to top up nodes
       const tx = {
         TransactionType: "Payment",
-        Account: "raWZPZzAkbKBLsui8EU6C4pngEAiKFKM7y",
+        Account: sendAccount,
         Amount: "5000000", //IN Drops 
         Destination: account, //wallet in the accounts loop from env
         Fee: "12", //12 drops aka 0.000012 XAH, Note: Fee is XAH NOT EVR
