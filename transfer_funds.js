@@ -93,8 +93,8 @@ const main = async () => {
       TransactionType: 'Payment',
       Account: account,
       Amount: {
-          "currency": "EVR",
-          "value": balance, //*** Change to balance (no quotes) or use "0.01" for testing low payment
+          "currency": "EVR",     //leave 0.02 EVR to pay for Reputation Hooks
+          "value": balance-0.02, //*** Change to balance (no quotes) or use "0.01" for testing low payment
           "issuer": "rEvernodee8dJLaFsujS6q1EiXvZYmHXr8" //DO NOT CHANGE - this is the EVR Trustline Issuer address
       },
       //Destination: 'rYourWalletYouControl'

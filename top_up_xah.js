@@ -55,7 +55,7 @@ const main = async () => {
 
       balance = parseInt(raw_balance) / 1000000;
 
-      console.log(account,',', balance)
+      console.log(account,':', balance)
       //console.log("BAL ", balance)
   
       //check just the XAH below 5 and top up
