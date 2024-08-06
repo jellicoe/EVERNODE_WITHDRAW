@@ -37,6 +37,8 @@ const wallets = []
 
 const myDate = new Date().toUTCString();
 
+const sendAccount = process.env.sendAccount
+
 console.log('Printing Account INFO...:', myDate);
 const main = async () => {
     for(const account of accounts) {
@@ -80,35 +82,30 @@ const main = async () => {
        //check just the EVRs balance is > 0 if not go to start of for loop with continue
       if (balance <= 1) {
         console.log('# Evr Balance TOO LOW:', balance)
-        continue;
+        //continue;
       }
 
-      console.log('# Ready to transfer:', account, " ", balance)
-
+      const sender = await client.send({ command: 'account_info', account: sendAccount })
+    
     //Destination Adress and TAG set in.env file
-    const destination = process.env.destination;
-    const tag = process.env.tag;
-
-    //floatpoint numbers are not precise- convert toFixed
-    var val = parseFloat(balance)-parseFloat(0.2) 
-    let value = val.toFixed(2) 
-    console.log('# Value is:', value)
+    //const destination = process.env.destination;
+    //const tag = process.env.tag;
 
     //send all funds to your chosen Exchange, Xaman or other Xahau account 
     const tx = {
       TransactionType: 'Payment',
-      Account: account,
+      Account: sendAccount,
       Amount: {
           "currency": "EVR",     //leave 0.2 EVR to pay for Reputation Hooks
-          "value": value, //*** Change to balance-0.2 (no quotes) or use "0.01" for testing low payment
+          "value": 1, //*** Change to balance-0.2 (no quotes) or use "0.01" for testing low payment
           "issuer": "rEvernodee8dJLaFsujS6q1EiXvZYmHXr8" //DO NOT CHANGE - this is the EVR Trustline Issuer address
       },
       //Destination: 'rYourWalletYouControl'
-      Destination: destination, //your exchnage or xaman wallet address
-      DestinationTag: tag, //*** set to YOUR exchange wallet TAG Note: no quotes << do not forget to set TAG
+      Destination: account, //your exchnage or xaman wallet address
+      DestinationTag: '121212', //*** set to YOUR exchange wallet TAG Note: no quotes << do not forget to set TAG
       Fee: '12', //12 drops aka 0.000012 XAH, Note: Fee is XAH NOT EVR
       NetworkID: '21337', //XAHAU Production ID
-      Sequence: account_data.Sequence
+      Sequence: sender.account_data.Sequence
     }
 
     const {signedTransaction} = lib.sign(tx, keypair)
