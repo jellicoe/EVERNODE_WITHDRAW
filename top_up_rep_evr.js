@@ -73,9 +73,9 @@ const main = async () => {
       }
 
        //check just the EVRs balance is > 0 if not go to start of for loop with continue
-      if (balance <= 1) {
+      if (balance < 1) {
         console.log('# Evr Balance TOO LOW:', balance)
-        //continue;
+        continue;
       }
 
       const sender = await client.send({ command: 'account_info', account: sendAccount })
