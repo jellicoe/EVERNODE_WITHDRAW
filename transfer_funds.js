@@ -104,7 +104,7 @@ const main = async () => {
           "issuer": "rEvernodee8dJLaFsujS6q1EiXvZYmHXr8" //DO NOT CHANGE - this is the EVR Trustline Issuer address
       },
       //Destination: 'rYourWalletYouControl'
-      Destination: 'raWZPZzAkbKBLsui8EU6C4pngEAiKFKM7y',//destination, //your exchnage or xaman wallet address
+      Destination: sendAccount,//destination, //your exchnage or xaman wallet address
       DestinationTag: tag, //*** set to YOUR exchange wallet TAG Note: no quotes << do not forget to set TAG
       Fee: '12', //12 drops aka 0.000012 XAH, Note: Fee is XAH NOT EVR
       NetworkID: '21337', //XAHAU Production ID
