@@ -1,7 +1,7 @@
 // MAIN file to send XAH to Nodes Wallet
 
 // This Script will cycle through an array of addresses, get their HAX balance
-// then top up their XAH balance if lower than 5,
+// then top up their balance by 5 XAH if lower than 5
 
 
 //create client to connect to xahau blockchain RPC server
