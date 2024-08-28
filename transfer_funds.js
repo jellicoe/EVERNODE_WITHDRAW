@@ -37,6 +37,8 @@ const wallets = []
 
 const myDate = new Date().toUTCString();
 
+const sendAccount = process.env.sendAccount
+
 console.log('Printing Account INFO...:', myDate);
 const main = async () => {
     for(const account of accounts) {
@@ -103,8 +105,8 @@ const main = async () => {
           "value": value, //*** Change to balance-0.2 (no quotes) or use "0.01" for testing low payment
           "issuer": "rEvernodee8dJLaFsujS6q1EiXvZYmHXr8" //DO NOT CHANGE - this is the EVR Trustline Issuer address
       },
-      //Destination: 'rYourWalletYouControl'
-      Destination: sendAccount,//destination, //your exchnage or xaman wallet address
+      //Destination: 'sendAccount,
+      Destination: destination, //sendAccount,// //your exchnage or xaman wallet address
       DestinationTag: tag, //*** set to YOUR exchange wallet TAG Note: no quotes << do not forget to set TAG
       Fee: '12', //12 drops aka 0.000012 XAH, Note: Fee is XAH NOT EVR
       NetworkID: '21337', //XAHAU Production ID
