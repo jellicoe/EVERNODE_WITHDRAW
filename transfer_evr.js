@@ -22,7 +22,25 @@ require('dotenv').config({ path: path.resolve(__dirname, '.env') })
 
 //accounts = your Node Wallets r Addresses 
 //replace with one or more of your rAddresses for each node in .env file
-const accounts = process.env.accounts.split('\n');
+
+const args = process.argv.slice(2);
+console.log("Arguments are ", args);
+
+
+var accounts = [];
+if (args[0]=='rep') {
+
+  //Note need to set regular key.
+  accounts = process.env.rep_accounts.split('\n');
+
+  //console.log("Repping ");
+  //exit();
+} else {
+  accounts = process.env.accounts.split('\n');
+
+  //console.log("Normal accounts ");
+  //exit();
+}
 
 //Signing Wallet which is set as Regular Key for all Nodes
 //set secret in .env file from regular key set for nodes
@@ -79,11 +97,11 @@ const main = async () => {
         exit();
       }
 
-       //check just the EVRs balance is > 0 if not go to start of for loop with continue
-      if (balance <= 1) {
+      //check just the EVRs balance is > 0 if not go to start of for loop with continue
+      /*if (balance <= 1) {
         console.log('# Evr Balance TOO LOW:', balance)
         continue;
-      }
+      }*/
 
       console.log('# Ready to transfer:', account, " ", balance)
 
@@ -92,9 +110,9 @@ const main = async () => {
     const tag = process.env.tag;
 
     //floatpoint numbers are not precise- convert toFixed
-    var val = parseFloat(balance)-parseFloat(0.2) 
+    /*var val = parseFloat(balance)-parseFloat(0.00) //was 0.2
     let value = val.toFixed(2) 
-    console.log('# Value is:', value)
+    console.log('# Value is:', value)*/
 
     //send all funds to your chosen Exchange, Xaman or other Xahau account 
     const tx = {
@@ -102,7 +120,7 @@ const main = async () => {
       Account: account,
       Amount: {
           "currency": "EVR",     //leave 0.2 EVR to pay for Reputation Hooks
-          "value": value, //*** Change to balance-0.2 (no quotes) or use "0.01" for testing low payment
+          "value": balance, //value, //*** Change to balance-0.2 (no quotes) or use "0.01" for testing low payment
           "issuer": "rEvernodee8dJLaFsujS6q1EiXvZYmHXr8" //DO NOT CHANGE - this is the EVR Trustline Issuer address
       },
       //Destination: 'sendAccount,
