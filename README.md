@@ -19,9 +19,7 @@ Copy .env.sample to .env
 Fields to SET in .env file script:
 
 accounts="rAddressNode01
-
 rAddressNode02
-
 rAddressNode03"
 
 secret="ssWalletSecretThatCanSIGN"
@@ -32,7 +30,15 @@ tag="1234567"
 
 npm install
 
-node transfer_funds.js
+node transfer_evr.js
+node transfer_xah.js
+
+also includes scripts to withdrawal top up nodes and reputation contract wallets with 
+
+top_up_node_evr.js
+top_up_node_xah.js
+top_up_rep_evr.js
+top_up_rep_xah.js
 
 *use at your own risk - double check all fields point to YOUR addresses that you CONTROL*
 
