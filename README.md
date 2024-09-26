@@ -19,7 +19,9 @@ Copy .env.sample to .env
 Fields to SET in .env file script:
 
 accounts="rAddressNode01
+
 rAddressNode02
+
 rAddressNode03"
 
 secret="ssWalletSecretThatCanSIGN"
